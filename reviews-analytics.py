@@ -5,6 +5,7 @@
 # bonus：每1000次才印出進度
 # 算留言平均長度(多少字)
 # 清單篩選：找出多少留言是小於100個字以內的
+# 清單篩選：把留言有提到good這個字的取出來
 
 
 # 印出總資料筆數，每1000筆顯示出資料讀取進度
@@ -34,5 +35,13 @@ for d in data:
 print('一共有', count_100, '則留言小於100字')
 print(new_data[0])
 
-
+# 清單篩選：把留言有提到good/Good這個字的取出來
+good_data = []
+for d in data:
+	if 'good' in d:
+		good_data.append(d)
+	elif 'Good' in d:
+		good_data.append(d)
+print(good_data[0])
+print('一共有', len(good_data), '筆留言提到good/Good')
 
